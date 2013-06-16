@@ -118,6 +118,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\images\bg_tile.jpg" />
+    <Content Include="Pages\images\bg_tile_02.jpg" />
     <Content Include="Pages\index.html" />
     <Content Include="Pages\processing-1.4.1.js" />
     <Content Include="Pages\processing-anim.js" />
