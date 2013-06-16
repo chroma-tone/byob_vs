@@ -12,7 +12,7 @@
 
 	$(document).ready(function(){
 
-	    
+	   
 		//var processingInstance = new Processing("canvas1", sketchProc);
 	});
 
@@ -20,23 +20,25 @@
 	
 	<script type = "text/javascript" src="scriptcam-master/scriptcam.js"></script>
 	<script type = "text/javascript"> 
-		$(document).ready(function() {
-		    $("#webcam").scriptcam({
-		        width: 640,
-		        height: 480,
-				showMicrophoneErrors:false,
-				onError:onError,
-				cornerRadius:20,
-				cornerColor:'e3e5e2',
-				onWebcamReady:onWebcamReady,
+	    $(document).ready(function() {
+	        $("#webcam").scriptcam({
+	            width: 640,
+	            height: 480,
+	            showMicrophoneErrors:false,
+	            onError:onError,
+	            cornerRadius:20,
+	            cornerColor:'e3e5e2',
+	            onWebcamReady:onWebcamReady,
 			
-				onPictureAsBase64: base64_tofield_and_image,
+	            onPictureAsBase64: base64_tofield_and_image
                
-			});
-		});
+	        })
+            
+	    });
+		
        
 		function base64_tofield() {
-			$('#formfield').val($.scriptcam.getFrameAsBase64());
+		    console.log($.scriptcam.getFrameAsBase64());
 		};
 		function base64_toimage() {
 			$('#image').attr("src","data:image/png;base64,"+$.scriptcam.getFrameAsBase64());
@@ -59,6 +61,11 @@
 			}); 
 			$('#cameraNames').val(camera);*/
 		    $('#' + data.id).get(0).SC_changeCamera(cameraNames[0]);
+		    
+		        while (true) {
+		            
+		            setTimeout(base64_tofield(), 3000);
+		        }
 		}
 	</script> 
 	
